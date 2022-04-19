@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function acao(){
+            console.log('Recebeu foco')
+
+        }
+        function acao1(){
+            console.log('Perdeu foco')
+
+        }
+        function acao2(){
+            console.log('Estado foi modificado')
+
+        }
+    </script>
+    <title>Eventos Formulário</title>
+</head>
+<body>
+    <!--Onfocus-->
+    <input value="onfocus" onfocus="acao()" type="text">
+
+    <!--Onblur-->
+    <input value="onblur" onblur="acao1()" type="text">
+
+       <select name="" id="" onchange="acao2()">
+           <option>Selecione</option>
+           <option value="2">Primeira opção</option>
+           <option value="3">Segunda opção</option>
+       </select>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Eventos mouse</title>
+    <script>
+        function acao1(){
+            alert('evento disparado')
+        }
+        function acao2(){
+            alert('Mouse deixou elemento')
+        }
+    </script>
+</head>
+<body>
+    <div id="tudo">
+        <!--onclick-->
+        <div onclick="acao()" style="background: #ccc; height: 150px; width: 150px; margin-bottom: 10px;">
+            <p>onclick</p>
+        </div>
+        <!--ondblclick (Dois cliques)-->
+        <div ondblclick="acao()" style="background: rgb(224, 114, 114); height: 150px; width: 150px; margin-bottom: 10px;">
+            <p>ondblclick</p>
+        </div>
+        <!--onmouseup-->
+        <div onmouseup="acao()" style="background: rgb(115, 221, 111); height: 150px; width: 150px; margin-bottom: 10px;">
+            <p>onmouseup</p>
+        </div>
+         <!--onmouseover-->
+         <div onmouseover="acao()" style="background: rgb(209, 230, 120); height: 150px; width: 150px; margin-bottom: 10px;">
+            <p>onmouseover</p>
+        </div>
+         <!--onmouseout-->
+         <div onmouseout="acao()" style="background: rgb(82, 230, 193); height: 150px; width: 150px; margin-bottom: 10px;">
+            <p>onmouseout</p>
+            
+        </div>
+        <!--Combinação de dois eventos-->
+        <div onclick="acao1()" onmouseout="acao2()" style="background: rgb(235, 141, 195); height: 150px; width: 150px; margin-bottom: 10px;">
+            <p>onclick
+                <br>
+                e
+                <br>
+                onmouseout
+            </p>
+            
+        </div>
+    </div>
+</body>
+</html>
