@@ -8,12 +8,16 @@
 
     <script>
 
-        let listaFuncionarios = ['Viviane', 'Rosângela', 'Livia', 'Lucas' ,'Fernanda']
+        let listaFuncionarios = ['Viviane', 'Rosângela', 'Livia', 'Lucas', 'Fernanda']
 
-            listaFuncionarios.forEach(function(valor, indice, x) {
-            console.log('indice ' + x)
+            listaFuncionarios.forEach(function(valor, indice, array) {
+            console.log('indice ' + indice + '| valor: ' + valor)
+
+            if(valor === 'Lucas'){
+            array[indice] = 'Um novo valor'
+        }
         });
-
+        console.log(listaFuncionarios)
     </script>
 
 </head>
