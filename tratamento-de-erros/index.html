@@ -10,17 +10,20 @@
         let video = Array()
 
         video[1] = Array()
-        video[1] = ['nome'] = 'Fullmetal Alchemist'
-        video[1] = ['categoria'] = 'Anime'
+        video[1]['nome'] = 'Fullmetal Alchemist'
+        video[1]['categoria'] = 'Anime'
 
-        function getVideo(Video){
+        function getVideo(video){
             
-            try{
-                console.log(video[0]['nome'])
-            }finally{
-                
-                console.log('Sempre passa por aqui (try/ catch)')
-            }
+           try {
+            console.log(video[0]['nome'])
+
+           }catch(e){
+               console.log('Agora sim podemos tratar esse erro')
+           } finally{
+               console.log('Sempre passa por aqui try/catch')
+           }
+           console.log('A aplicação não morreu')
         }
         getVideo(video)
         
