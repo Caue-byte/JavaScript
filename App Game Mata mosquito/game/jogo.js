@@ -1,7 +1,7 @@
 //Definindo variavel para ficar fora do escopo
 let altura = 0
 let largura = 0
-
+vidas = 1
 function ajustaTamanhoPalcoJogo() {
     altura = window.innerHeight
     largura = window.innerWidth
@@ -11,6 +11,25 @@ function ajustaTamanhoPalcoJogo() {
 }
 ajustaTamanhoPalcoJogo()
     function posicaoRandomica(){
+  
+        mosquitoexiste = document.getElementById('mosquito')
+
+  
+if(mosquitoexiste){
+    mosquitoexiste.remove()
+
+    if(vidas > 3){   
+  
+        window.location.href = 'fim_de_jogo.html'
+}
+else{
+//Verificando se ja exite um elemento com id = mosquito na tela
+document.getElementById('v' + vidas).src ='imagens/coracao_vazio.png'
+
+vidas++
+}
+}
+
 //Gerando posições aleatorias na tela 
 //Usei -90 para que mantenha uma pequena distância das bordas
 let posicaoX = Math.floor(Math.random() * largura - 90)
@@ -26,15 +45,17 @@ console.log(posicaoX, posicaoY)
 let mosquito = document.createElement('img')
 mosquito.src = 'imagens/mosca.png'
 //dando a classe para o mosquito
-mosquito.className = tamanhoAleatorio()
+mosquito.className = tamanhoAleatorio() + ' ' +  ladoAleatorio()
 //Dando a posição randomica para sua posição atual
 mosquito.style.left = posicaoX + 'px'
 mosquito.style.top = posicaoY + 'px'
 mosquito.style.position = 'absolute'
+mosquito.id = 'mosquito'
+mosquito.onclick = function(){
+    this.remove()
+}
 //adicionando o mosquito no body html
 document.body.appendChild(mosquito)
-
-tamanhoAleatorio()
 }
 
 function tamanhoAleatorio(){
@@ -51,5 +72,16 @@ function tamanhoAleatorio(){
             return 'mosquito3'
     }
 
+}
 
+function ladoAleatorio(){
+    let classe = Math.floor(Math.random() * 2)
+    console.log(classe)
+
+    switch(classe){
+        case 0:
+            return 'ladoA'
+        case 1:
+            return 'ladoB'
+    }
 }
