@@ -1,7 +1,28 @@
 //Definindo variavel para ficar fora do escopo
 let altura = 0
 let largura = 0
-vidas = 1
+let vidas = 1
+let tempo = 59
+let criaMosquitoTempo = 1500
+
+let nivel = window.location.search
+nivel = nivel.replace('?', '')
+
+if(nivel === 'normal'){
+    //1500
+    criaMosquitoTempo = 1500
+    tempo = 59
+}
+else if(nivel === 'dificil'){
+    //1000
+    criaMosquitoTempo = 1000
+    tempo = 30
+}
+else if(nivel === 'muitoDificil'){
+    //750
+    criaMosquitoTempo = 750
+    tempo = 15
+}
 function ajustaTamanhoPalcoJogo() {
     altura = window.innerHeight
     largura = window.innerWidth
@@ -10,6 +31,24 @@ function ajustaTamanhoPalcoJogo() {
     console.log(largura, altura )
 }
 ajustaTamanhoPalcoJogo()
+
+
+var cronometro = setInterval(function(){
+
+    tempo -= 1
+
+    if(tempo < 0){
+        clearInterval(cronometro)
+        clearInterval(criaMosquito)
+        window.location.href = 'vitoria.html'
+    }else{
+        document.getElementById('cronometro').innerHTML = tempo
+    }
+
+
+}, 1000)
+
+
     function posicaoRandomica(){
   
         mosquitoexiste = document.getElementById('mosquito')
