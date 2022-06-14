@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+
+        //Definir uma constante com letra MAIUSCULA
+        const SERIE = 'Friends'
+        //Ela nao pode ser reescrita 
+        //SERIE = 'The Walking Dead'
+        //Escopo global n altera no escopo da função
+        function x(){
+            const SERIE = 'The Walking Dead'
+            console.log('Dentro da função: ' + SERIE)
+        }
+        x()
+        console.log('Dentro do escopo global: ' + SERIE)
+
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
