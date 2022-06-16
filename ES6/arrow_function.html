@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+        /*let quadrado = function(x = 5){
+            return x * x
+        }*/
+        //Quando eu recebo apenas 1 parâmetro não preciso usar os parenteses mas quando eu não tenho nenhum parametro eu uso ()
+        /*let quadrado = (x, y) => {
+            return x * x
+        }*/
+        //Também nao preciso usar o return
+        //let quadrado = x => x * x //Return implícito
+        /*
+        let parOuImpar = function(numero){
+            if(numero % 2 === 0){
+                return 'par'
+            }
+            else return 'impar'
+        }
+        */
+        let parOuImpar = numero => numero % 2 === 0 ? 'par' : 'impar'
+          
+        
+
+        
+        document.write(parOuImpar(x))
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+</body>
+</html>
